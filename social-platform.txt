@@ -2,10 +2,9 @@
 
 SELECT username
 FROM users
-JOIN posts ON users.id = posts.user_id
-JOIN media_post ON posts.id = media_post.post_id
-JOIN medias on media_post.media_id = medias.id
-WHERE medias.type = "video";
+JOIN medias ON users.id = medias.user_id
+WHERE medias.type = "video"
+GROUP BY username;
 
 2. Seleziona tutti i post senza Like
 
